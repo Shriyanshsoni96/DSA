@@ -1,13 +1,12 @@
 #include<iostream>
 using namespace std;
 int main(){ 
-    int i;
-    cin>>i;
-    if(i%2==0){
-        cout<<"even"<<endl;
+    int n;
+    cin>>n;
+    if(n%2==0){
+        cout<<"Even"<<endl;
     }
     else{
-        cout<<"odd"<<endl;
+        cout<<"Odd"<<endl;
     }
-    return 0;
 }
