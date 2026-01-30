@@ -41,19 +41,20 @@ int main(){
             j--;
         }
       int k = 1 ;
-      while(k<=i)
+      while(k<=2*i-1)
       {
         cout<<" *";
     k++;
       }
-      int l = 1;
-      while(l<=i)
-      {
-        if(l!=1){
-            cout<<" *";
-        }
-        l++;
-      }
+      // methods of applying is different ans is same
+      // int l = 1;
+      // while(l<=i)
+      // {
+      //   if(l!=1){
+      //     cout<<" *";
+      //   }
+      //   l++;
+      // }
       cout<<endl;
       i++;
     }
