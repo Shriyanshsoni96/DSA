@@ -11,27 +11,27 @@ int main(){
         j=n-i;
         while(j>=1)
         {
-            cout<<" ";
+            cout<<"  ";
             j--;
         }
         //first star
-        cout<<"*";
+        cout<<" *";
         
         //middle spaces/stars
         if(i>1) {
             j=1;
             while(j<2*i-2)
             {
-                cout<<" ";
+                cout<<" -";
                 j++;
             }
-            cout<<"*";
+            cout<<" *";
         }
         
         cout<<endl;
         i++;
     }
-    
+       
     // Lower pyramid (pointing down)
     i=n-1;
     while(i>=1) {
@@ -39,21 +39,21 @@ int main(){
         j=n-i;
         while(j>=1)
         {
-            cout<<" ";
+            cout<<"  ";
             j--;
         }
         //first star
-        cout<<"*";
+        cout<<" *";
         
         //middle spaces/stars
         if(i>1) {
             j=1;
             while(j<2*i-2)
             {
-                cout<<" ";
+                cout<<" -";
                 j++;
             }
-            cout<<"*";
+            cout<<" *";
         }
         
         cout<<endl;
