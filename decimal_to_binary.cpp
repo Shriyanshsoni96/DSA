@@ -1,15 +1,25 @@
 #include<iostream>
 using namespace std;
-int Binary(int n )
-{
-    while(n>0)
-    {
-        
+int rev(int n ){
+        int rev=0;
+        while(n!=0)
+        {
+            int k = n%10;
+            rev=rev*10+k;
+            n=n/10;                 
     }
+    return rev;
 }
 int main() {
-int i = 1;
+
 int n;
 cin>>n;
-cout<<"Binary No are "<<Binary(n);
+int bn = 1;
+while(n>0)
+{
+    int k= n%2;
+    bn = bn*10+k;
+    n=n/2;
+}
+cout<<rev(bn)/10<<" ";
 }
