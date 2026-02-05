@@ -1,31 +1,50 @@
 #include<iostream>
 using namespace std;
 int main() {
-    int n = 5;
-    
-    // Line 1: First vertical line
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            if(j == n/2) cout << "*";
-            else cout << " ";
+int i = 1;
+int n ;
+cin>>n;
+if(n>=5)
+{
+int mid =  n/2+1;
+while(i<=n)
+{
+    int j = 1;
+    while (j<=n)
+    {
+        if (i==mid)
+       {cout<<" *"; 
         }
-        cout << endl;
-    }
-    
-    // Line 2: Horizontal line with center (middle row)
-    for(int j = 0; j < 2*n-1; j++) {
-        cout << "*";
-    }
-    cout << endl;
-    
-    // Line 3: Third vertical line
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            if(j == n/2) cout << "*";
-            else cout << " ";
+       else if( i==1 && j==mid )
+        {     
+            int k = mid;
+            while(k<=n)
+            {
+                cout<<" *";
+                k++;
+            }
+
+        } 
+       else if(i<=mid && j==1||j==mid)
+       {
+        cout<<" *";
+       }
+        else if(i>=mid && j==n)
+        {cout<<" *";
         }
-        cout << endl;
+        
+        else if(i==n&&j<=mid){
+            cout<<" *";
+        }
+       else{
+        cout<<"  ";
+           }
+       j++;
     }
-    
-    return 0;
+
+cout<<endl;
+i++;
+}
+}
+else cout<<"Wrong input";
 }
