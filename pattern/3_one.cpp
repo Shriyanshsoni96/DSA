@@ -17,7 +17,7 @@ while(i<=n){
          {
             cout<<"#";
          }
-          else if(i==i/2+1 || j==j/2+1)
+          else if(i==(n/2)+1 && j==(n/2)+1)
             {
                 cout<<"@";
             }
