@@ -5,7 +5,8 @@ int fibbo(int n ){
     {
         return n;
 }
-return fibbo(n-1)+fibbo(n-2);
+int fibboValue = fibbo(n-1)+fibbo(n-2);
+return fibboValue;
 }
 int main() {
     int n;
