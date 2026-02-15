@@ -9,16 +9,16 @@ int main() {
     int temp=n;
     int sum=0;
     //
-    int l=0;
+    int cnt=0;
     while (temp!=0)
     {
         temp=temp/10;
-        l++;
+        cnt++;
     }
     while (n!=0)
     {
         int k=n%10;
-        sum=sum+pow(k,l);
+        sum=sum+pow(k,cnt);
         n=n/10; 
     }
     if(sum==og){
