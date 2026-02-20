@@ -5,6 +5,7 @@ int len(int n )
     while(n!=0)
     {
         n=n/10;
+        
         c++;
     }
     return c;
