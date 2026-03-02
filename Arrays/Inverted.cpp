@@ -1,23 +1,36 @@
-#include<iostream>
-#include<algorithm>
+#include <iostream>
+#include <vector>
 using namespace std;
-int inverted(int arr[], int n )
-{   int a[n];
-    for(int i=0 ; i<n ; i++)
-    {
-        swap(arr[i],i);
-       
+
+void invertArray(vector<int>& arr, vector<int>& inv, int index) {
+    // Base case
+    if (index == arr.size()) {
+        return;
     }
-    
+
+    int value = arr[index];
+    inv[value] = index;
+
+    // Recursive call
+    invertArray(arr, inv, index + 1);
 }
-int main(){
-int n ;
-cin>>n;
-int arr[n];
-for(int i = 0 ; i<n ;i++)
-{
-   cin>>arr[i];
-}
-inverted(arr,n);
-return 0;
+
+int main() {
+    int N;
+    cin >> N;
+
+    vector<int> arr(N);
+    for (int i = 0; i < N; i++) {
+        cin >> arr[i];
+    }
+
+    vector<int> inv(N);
+
+    invertArray(arr, inv, 0);
+
+    for (int i = 0; i < N; i++) {
+        cout << inv[i] << " ";
+    }
+
+    return 0;
 }
