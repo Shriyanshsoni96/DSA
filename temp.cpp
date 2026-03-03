@@ -1,45 +1,60 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include<iostream>
+#include<vector>
+#include<algorithm>
+#include<climits>
 using namespace std;
 
-void pairprint(vector<int> &arr, int target) {
-    int left = 0;
-    int right = arr.size() - 1;
+int rosepair(int t)
+{
+    while(t)
+    {
+        int n ;
+        cin>>n;
 
-    while (left < right) {
-        int sum = arr[left] + arr[right];
-
-        if (sum == target) {
-            cout << arr[left] << " and " << arr[right] << endl;
+        vector<int>arr(n);
+        for(int i =0 ; i<n; i++)
+        {
+            cin>>arr[i];
+        }
+        int m ; 
+        cin>>m;
+         
+        sort(arr.begin(),arr.end());
+        int left=0 , right = n-1;
+        int min= INT_MAX;
+        int a1=0 , a2=0;
+        
+        while(left<right)
+        {
+        int sum= arr[left]+arr[right];
+         if(sum==m)
+         {
+            int diff=arr[right]-arr[left];
+            if(diff<min)
+            {
+                min=diff;
+                a1 = arr[left];
+                a2 = arr[right];
+            }
             left++;
             right--;
-        }
-        else if (sum < target) {
+         }
+         else if(sum<m)
+         {
             left++;
-        }
-        else {
+         }
+         else{
             right--;
+         }
         }
+        cout<<" Deepak should buy roses whose prices are"<<a1<<"and"<<a2;
+        
+    t--;
     }
 }
-
-int main() {
-    int N;
-    cin >> N;
-
-    vector<int> arr(N);
-
-    for (int i = 0; i < N; i++) {
-        cin >> arr[i];
-    }
-
-    int target;
-    cin >> target;
-
-    sort(arr.begin(), arr.end());
-
-    pairprint(arr, target);
-
-    return 0;
+int main(){
+int test ;
+cin>>test;
+rosepair(test);
+return 0;
 }
