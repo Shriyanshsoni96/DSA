@@ -3,17 +3,6 @@
 using namespace std;
 vector<int>convert(int n )
 {
-}
-int main(){
-   int n ;
-   cin>>n;
-   vector<int>number=convert(n);
-   vector<int>ans(number.size()+1);
-
-   for(int i = 0 ; i<number.size();i++)
-   {
-    ans[number[i]]=i+1;
-
     vector<int>number;
     while(n!=0)
     {
@@ -22,12 +11,11 @@ int main(){
         n=n/10;
     }
     return number;
-   }
-   for(int i = number.size();i>=1;i--)
-   {
-    cout<<ans[i];
-
-   }
+}
+int main(){
+   int n ;
+   cin>>n;
+   
      
    return 0;
 }
