@@ -1,28 +1,47 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
 
-    int t;
-    cin >> t;
+    int n, m, k, s;
+    cin >> n >> m >> k >> s;
 
-    while(t--) {
-        int n;
-        cin >> n;
+    vector<vector<char>> p(n, vector<char>(m));
 
-        vector<long long> a(n);
-        for(int i = 0; i < n; i++)
-            cin >> a[i];
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < m; j++)
+            cin >> p[i][j];
 
-        int operations = 0;
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < m; j++) {
 
-        for(int i = 1; i < n; i++) {
-            if((a[i] % 2) == (a[i-1] % 2))
-                operations++;
+            if(s <= k) break;
+
+            if(p[i][j] == '.') {
+                s -= 2;
+            }
+            else if(p[i][j] == '*') {
+                s += 5;
+            }
+            else if(p[i][j] == '#') {
+                break;
+            }
+
+            if(j != m - 1)
+                s -= 1;
         }
-        cout << operations << "\n";
+
+        if(s <= k)
+            break;
+    }
+
+    if(s >= k) {
+        cout << "Yes\n";
+        cout << s;
+    }
+    else {
+        cout << "No";
     }
 
     return 0;
