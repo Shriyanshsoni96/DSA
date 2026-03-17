@@ -1,38 +1,37 @@
 #include<iostream>
 #include<vector>
-#include<algorithm>
+#include<climits>
 using namespace std;
-
-int main() {
-    int n , c;
-    cin>>n>>c;
-   vector<int> a(n); 
-    for(int i = 0; i < n; i++)
-    { 
-        cin>>a[i];
+int main(){
+    int n;
+    cin>>n;
+vector<vector<int>> a(n,vector<int>(n));
+for(int i =0 ;i<n;i++)
+{
+    for(int j = 0 ; j<n ;j++)
+    {
+        cin>>a[i][j];
     }
-    sort(a.begin(),a.end());
-    int right= n-1;
-    int m = a[right]/c;
-    int temp=0;
-    for(int i = 0; i < n; i++)
-    { 
-        if(i==0)
-        {
-            temp=a[i]+m;
-            cout<<a[i]<<" ";
-        }
-        else if(temp =a[i])
-        {
-            cout<<a[i]<<" ";
-            temp=a[i]+m;
+}
+int maxSum = INT_MIN;
+int index = -1;
 
-        }
-        else if(temp<=a[i] && a[i]>temp)
-        {
-            cout<<a[i]<<" ";
-            temp=a[i]+m;
-        }
-    }   
-   
+for(int i = 0; i < n; i++)
+{
+    int sum = 0;
+    for(int j = 0; j < n; j++)
+    {
+        sum += a[j][i];
+    }
+    if(sum > maxSum)
+    {
+        maxSum = sum;
+        index = i;
+    }
+}
+
+cout << index << " " << maxSum;
+
+
+return 0;
 }
