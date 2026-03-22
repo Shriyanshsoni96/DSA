@@ -44,7 +44,7 @@ int allocation(vector<int> &arr , int n , int m )
     
     if(isvalid(arr,n,m,mid))//mid shift to left 
     { 
-            ans =mid; 
+            ans = mid; 
             end=mid-1;
     }
     else// mid shift to right  
@@ -57,8 +57,8 @@ return ans;
 }
 
 int main(){
-vector<int> arr ={15,17,20};
-int n = 3;// no of pages 
+vector<int> arr ={12,34,67,90};
+int n = 40;// no of pages 
 int m =2 ; //no of students
 cout<<allocation(arr,n,m)<<endl;
 return 0;
