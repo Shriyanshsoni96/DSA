@@ -34,7 +34,7 @@ int main() {
 
     // 6. erase()
     // Kaam: String ke kuch characters remove karta hai
-    // erase(start_index, number_of_characters)
+    // erasee(start_index, number_of_characters)
     s.erase(5,1);
     cout << "After erase: " << s << endl;       // Output: Hello World
 
