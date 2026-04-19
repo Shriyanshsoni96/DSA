@@ -1,23 +1,9 @@
-class Solution {
-public:
-int helper(string &s,int l,int r){
-    int count = 0;
-    while(l>=0 && r<s.size() && s[l]==s[r]){
-        
-            count++;
-            l--;
-            r++;
-        
+#include <iostream>
+using namespace std;
+
+int main() {
+    while (true) {
+        cout << "Infinite Loop Running..." << endl;
     }
-    return count;
+    return 0;
 }
-    int countSubstrings(string s) {
-        int n=s.size();
-        int count=0;
-        for(int i=0;i<n;i++){
-            count+=helper(s,i,i);
-            count+=helper(s,i,i+1);
-        }
-        return count;
-    }
-};
