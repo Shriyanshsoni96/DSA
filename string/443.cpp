@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-int freq(vector<char>& chars)
+void freq(vector<char>& chars)
 {
     int cnt = 1;
     vector<char> ans;
@@ -10,10 +10,22 @@ int freq(vector<char>& chars)
     {
         if(chars[i]!=chars[i-1])
         {
-
+            ans.push_back(cnt+'0');
+            ans.push_back(chars[i]);
+            cnt=1;
+        }
+        else{
+            cnt++;
         }
     }
-
+            ans.push_back(cnt+'0');
+    
+    
+  
+   for(int i = 0 ; i<ans.size();i++)
+   {
+    cout<<ans[i];
+   }
 }
 
 int main(){
