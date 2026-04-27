@@ -1,35 +1,39 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-void freq(vector<char>& chars)
-{
-    int cnt = 1;
-    vector<char> ans;
-    ans.push_back(chars[0]);
-    for(int i = 1 ; i <chars.size() ; i++)
-    {
-        if(chars[i]!=chars[i-1])
-        {
-            ans.push_back(cnt+'0');
-            ans.push_back(chars[i]);
-            cnt=1;
+
+int compress(vector<char>& chars) {
+    int n = chars.size();
+    int index = 0;
+
+    for(int i = 0; i < n; ) {
+        char curr = chars[i];
+        int count = 0;
+
+        while(i < n && chars[i] == curr) {
+            i++;
+            count++;
         }
-        else{
-            cnt++;
+
+        chars[index++] = curr;
+
+        if(count > 1) {
+            string s = to_string(count);
+            for(char c : s) {
+                chars[index++] = c;
+            }
         }
     }
-            ans.push_back(cnt+'0');
-    
-    
-  
-   for(int i = 0 ; i<ans.size();i++)
-   {
-    cout<<ans[i];
-   }
+
+    return index;
 }
 
-int main(){
+int main() {
     vector<char> chars = {'a','a','b','b','c','c','c'};
-    cout<<freq(chars);
-    return 0;
+    int len = compress(chars);
+
+    cout << len << endl;
+    for(int i = 0; i < len; i++) {
+        cout << chars[i];
+    }
 }
