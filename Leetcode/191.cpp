@@ -8,7 +8,7 @@ int hammingWeight(int n) {
         n = n & (n - 1); // removes one set bit
         count++;
     }
-
+ 
     return count;
 }
 
